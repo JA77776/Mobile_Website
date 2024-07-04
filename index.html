@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile OS Portfolio</title>
+    <link rel="stylesheet" href="Mobile_Styling.css">
+    <script src="https://kit.fontawesome.com/282f2785e2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="device">
+        <div class="lock-screen" id="lockScreen">
+            <div class="lock-screen-container">
+                <video class="home-screen-video" src="videos/vecteezy_hermosas-particulas-de-colores-humo-fondo-abstracto-video_3576466.mp4" autoplay loop muted></video>
+                <h1>Welcome</h1>
+                <div class="weather">
+                    <div class="temperature" id="temperature">--°</div>
+                    <div class="location" id="location">Loading...</div>
+                </div>
+                <div class="time" id="time">--:--</div>
+                <div class="slide-to-unlock" id="slideToUnlock">Click  to unlock</div>
+                <div class="profile-container">
+    
+                </div>
+            </div>
+        </div>
+        <div class="screen" id="mainScreen">
+                <video class="home-screen-video" src="videos/particle_fluid_3.mov" autoplay loop muted></video>
+            <div class="status-bar" id="statusBar">
+                <div class="left">10:00 AM</div>
+                <div class="right">
+                    <span><i class="fa-light fa-signal"></i></span>
+                    <span><i class="fa-solid fa-battery-three-quarters"></i></span>
+                </div>
+            </div>
+            <div class="control-center" id="controlCenter">Control Center</div>
+            <div class="notifications" id="notifications">Notifications</div>
+            <div class="apps">
+                <div class="app active" id="app1" onclick="openApp('app1Screen')">App 1</div>
+                <div class="app" id="app2" onclick="openApp('app2Screen')">App 2</div>
+                <div class="app" id="app3" onclick="openApp('app3Screen')">App 3</div>
+                <div class="app" id="app4" onclick="openApp('app4Screen')">App 4</div>
+                <!-- More apps--> 
+            </div>
+
+            <div class="nav-buttons">
+                <button onclick="goHome()">Home</button>
+                <button onclick="goBack()">Back</button>
+            </div>
+            <div class="settings-button" onclick="openSettings()">Settings</div>
+              <!-- Off switch button -->
+            <div class="off-switch" onclick="goToLockScreen()">Lock</div>
+
+        </div>
+
+
+        <div class="app-screen" id="app1Screen">
+            <Iframe src="https://subtle-clafoutis-754b63.netlify.app" frameborder="0"></Iframe>
+            <button class="cls" onclick="closeApp('app1Screen')">Close</button>
+            <button class="cls" onclick="switchApp()">Switch</button>
+        </div>
+
+        <div class="app-screen" id="app2Screen">
+            <iframe src="https://jaydonnhendricks09.wixstudio.io/portfolio" frameborder="0"></iframe>
+            <button class="cls" onclick="closeApp('app2Screen')">Close</button>
+            <button class="cls" onclick="switchApp()">Switch</button>
+        </div>
+
+        <div class="app-screen" id="app3Screen">
+            <iframe src="https://www.youtube.com/embed/{QFaFIcGhPoM&list}" frameborder="0" allowfullscreen></iframe>
+            <button class="cls" onclick="closeApp('app3Screen')">Close</button>
+            <button class="cls" onclick="switchApp()">Switch</button>
+        </div>
+        <div class="app-screen" id="app4Screen">
+            <iframe src="https://ja77776.github.io/Music" frameborder="0"></iframe>
+            <button class="cls" onclick="closeApp('app4Screen')">Close</button>
+            <button class="cls" onclick="switchApp()">Switch</button>
+        </div>
+        <!-- More app screens-->
+
+        <div class="settings-panel" id="settingsPanel">
+            <h2>Settings</h2>
+            <div class="setting-option">
+                <label for="themeSelect">Theme:</label>
+                <select id="themeSelect" onchange="changeTheme()">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+
+                <div class="setting-option">
+                    <label for="appIconUpload">Change App Icon:</label>
+                    <input type="file" id="appIconUpload" accept="image/video*" onchange="changeAppIcon('app1', 'appIconUpload')" />
+                    <label for="appIconUpload1">Change App Icon:</label>
+                    <input type="file" id="appIconUpload1" accept="image/video*" onchange="changeAppIcon('app2', 'appIconUpload1')" />
+                    <label for="appIconUpload2">Change App Icon:</label>
+                    <input type="file" id="appIconUpload2" accept="image/video*" onchange="changeAppIcon('app3', 'appIconUpload2')" />
+                    <label for="appIconUpload3">Change App Icon:</label>
+                    <input type="file" id="appIconUpload3" accept="image/video*" onchange="changeAppIcon('app4', 'appIconUpload3')" />
+
+                </div>
+                <button  onclick="closeSettings()">Close</button>
+            </div>
+    </div>
+
+    
+    <script src="mobile.js"></script>
+</body>
+</html>
